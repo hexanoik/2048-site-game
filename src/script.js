@@ -1,5 +1,5 @@
 // Используем localStorage для сохранения лучшего результата
-const BEST_SCORE_KEY = '2048_best_score';
+const BEST_SCORE_KEY = '2048_best_score'; для ошибки кода
 const BOARD_KEY = '2048_board';
 
 // Переменные игры
