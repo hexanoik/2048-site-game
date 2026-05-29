@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2048 - Игра</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1 class="title">2048</h1>
+                <p class="subtitle">Соедините плитки, чтобы создать 2048</p>
+            </div>
+            <div class="header-stats">
+                <div class="stat-box">
+                    <span class="stat-label">Счет</span>
+                    <span class="stat-value" id="score">0</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Лучший</span>
+                    <span class="stat-value" id="best-score">0</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="game-container">
+            <div class="game-board" id="gameBoard">
+                <!-- Плитки будут добавлены здесь JavaScript -->
+            </div>
+            <div class="game-info">
+                <p>Используйте стрелки на клавиатуре или кнопки ниже</p>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button class="btn btn-primary" id="newGameBtn">Новая игра</button>
+            <button class="btn btn-help" id="helpBtn">Правила</button>
+        </div>
+
+        <div class="button-controls">
+            <button class="arrow-btn" id="upBtn">↑</button>
+            <div class="button-row">
+                <button class="arrow-btn" id="leftBtn">←</button>
+                <button class="arrow-btn" id="downBtn">↓</button>
+                <button class="arrow-btn" id="rightBtn">→</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно с правилами -->
+    <div class="modal" id="rulesModal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2>Правила игры 2048</h2>
+            <ul>
+                <li>Используйте стрелки на клавиатуре для перемещения плиток</li>
+                <li>Соедините плитки с одинаковыми числами</li>
+                <li>Две плитки "2" соединяются в "4", "4" + "4" = "8" и так далее</li>
+                <li>Цель: создать плитку "2048"</li>
+                <li>После достижения 2048 вы можете продолжить играть</li>
+                <li>Игра заканчивается, когда нет возможных ходов</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Модальное окно с окончанием игры -->
+    <div class="modal" id="gameOverModal">
+        <div class="modal-content game-over-content">
+            <h2>Игра окончена!</h2>
+            <p>Ваш счет: <span id="finalScore">0</span></p>
+            <button class="btn btn-primary large" onclick="newGame()">Играть заново</button>
+        </div>
+    </div>
+
+    <!-- Модальное окно с победой -->
+    <div class="modal" id="winModal">
+        <div class="modal-content win-content">
+            <h2>🎉 Вы выиграли! 🎉</h2>
+            <p>Вы достигли 2048!</p>
+            <p>Ваш счет: <span id="winScore">0</span></p>
+            <button class="btn btn-primary large" onclick="closeWinModal()">Продолжить</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
